@@ -22,10 +22,10 @@ def get_todoist_tasks():
         return {"success": False, "error": str(e)}
     
 @mcp.tool()
-def update_todoist_task_by_id(task_id: str, content: str, priority: int, due_string: str, labels: list[str]):
+def update_todoist_task_by_id(task_id: str, content: str = None, priority: int = None, due_string: str = None, labels: list[str]= None):
     """Update a task from Todoist by ID"""
     try:
-        task = todoist.update_task(task_id, content, priority, due_string, labels)
+        task = todoist.update_task(task_id, content=content, priority=priority, due_string=due_string, labels=labels)
         return task
         
     except Exception as e:
