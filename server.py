@@ -9,12 +9,7 @@ mcp = FastMCP("Todoist MCP Server")
 # Initialize Todoist API client
 todoist = TodoistAPI(config.TODOIST_API_KEY)
 
-# Import all tools and resources after creating mcp and todoist instances
-from tools import tasks, projects, labels, sections
-# from resources import register_resources
 
-# Register resources
-# register_resources(mcp, todoist)
 
 @mcp.tool()
 def get_todoist_tasks():
